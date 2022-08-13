@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    font-family: 'Hind', sans-serif;
+}
+/* Header */
+/* trước hover */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+}
+#portNavbar .nav-link::after {
+    content: '';
+    width: 0;
+    height: 5px;
+    background-color: #35a22c;
+    display: block;
+    transition: all .5s;
+}
+/* sau hover */
+#portNavbar .nav-link:hover::after {
+    width: 100%;
+}
+#portNavbar .active .nav-link::after {
+    width: 100%;
+    /* có class = 'active' thì width luôn 100% */
+}
+
+/* Carousel */
+/* b1 chỉnh kích thước ảnh avatar
+b2 chỉnh hình nền (height)
+b3 chỉnh caption ở giữa .carousel
+b4 chỉnh hình dạng indicator */
+
+
+/* b1 chỉnh kích thước avatar */
+.portavatar {
+    width: 140px;
+    border-radius: 50%;
+}
+
+/* b2 chỉnh hình nền (height)
+VW viewport width thường dùng cho font size , vùng nội dung chữ quan trọng mà khách hàng không muốn thay đổi nội dung vd slogan, banner 
+% : kích thước theo thẻ cha gần nhất
+VH viewport height đơn vị sẽ theo kích thước của trình duyệt*/
+#portcarouselID .carousel-item {
+    /* 100vh luôn có % bằng với khung trình duyệt không quan tâm cha con */
+    height: 100vh;
+}
+#portcarouselID .carousel-item>img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+
+/* b3 chỉnh caption ở giữa */
+#portcarouselID .carousel-caption {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+/* b4 chỉnh hình dạng */
+#portcarouselID .carousel-indicators li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#portcarouselID .carousel-indicators li.active {
+    background-color: #35a22c;
+}
